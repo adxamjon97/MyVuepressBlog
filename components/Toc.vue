@@ -7,7 +7,7 @@
       class="vuepress-toc-item"
       :class="[
         `vuepress-toc-h${item.level}`,
-        { active: activeIndex === index },
+     	{ active: activeIndex === index },
       ]"
     >
       <a :href="`#${item.slug}`" :title="item.title">{{ item.title }}</a>

@@ -1,30 +1,36 @@
 <template>
-  <div id="mobile-header">
-    <div class="mobile-header-bar">
-      <div class="mobile-header-title">
-        <NavLink link="/" class="mobile-home-link navbar-brand"><img :src="($withBase)($themeConfig.logo)"> {{ $site.title }} </NavLink>
-        <component
-          :is="isOpen ? 'XIcon' : 'MenuIcon'"
-          @click="$emit('toggle-sidebar')"
-        />
-      </div>
-      <div class="mobile-menu-wrapper" :class="{ open: isOpen }">
-        <hr class="menu-divider" />
-        <ul v-if="$themeConfig.nav" class="mobile-nav">
-          <li
-            v-for="item in $themeConfig.nav"
-            :key="item.text"
-            class="mobile-nav-item"
-          >
-            <NavLink :link="item.link">{{ item.text }}</NavLink>
-          </li>
-          <li class="mobile-nav-item">
-            <Feed />
-          </li>
-        </ul>
-      </div>
-    </div>
-  </div>
+	<div id="mobile-header">
+		<div class="mobile-header-bar">
+			<div class="mobile-header-title">
+				<NavLink link="/" 
+						class="mobile-home-link navbar-brand">
+					<img :src="($withBase)($themeConfig.logo)"> 
+					{{ $site.title }} 
+				</NavLink>
+        		
+        		<component :is="isOpen ? 'XIcon' : 'MenuIcon'"
+        			@click="$emit('toggle-sidebar')"/>
+      		</div>
+      		
+      		<div class="mobile-menu-wrapper" 
+      				:class="{ open: isOpen }">
+        	
+        		<hr class="menu-divider" />
+    			
+    			<ul v-if="$themeConfig.nav" class="mobile-nav">
+      				<li v-for="item in $themeConfig.nav"
+        					:key="item.text"
+        					class="mobile-nav-item">
+        				<NavLink :link="item.link">{{ item.text }}</NavLink>
+      				</li>
+      				
+      				<li class="mobile-nav-item">
+        				<Feed />
+      				</li>
+        		</ul>
+      		</div>
+    	</div>
+	</div>
 </template>
 
 <script>

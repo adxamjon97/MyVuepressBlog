@@ -1,19 +1,14 @@
 <template>
-  <router-link
-    v-if="!isExternal(normalizedlink)"
-    class=""
-    :to="normalizedlink"
-    :exact="exact"
-  >
-    <slot />
-  </router-link>
-  <a
-    v-else
-    :href="normalizedlink"
-    class="external"
-    :target="
-      isMailto(normalizedlink) || isTel(normalizedlink) ? null : '_blank'
-    "
+	<router-link v-if="!isExternal(normalizedlink)"
+    		class=""
+    		:to="normalizedlink"
+    		:exact="exact">
+    	<slot />
+  	</router-link>
+  	
+  	<a v-else :href="normalizedlink"
+    		class="external"
+    		:target="isMailto(normalizedlink) || isTel(normalizedlink) ? null : '_blank'"
     :rel="
       isMailto(normalizedlink) || isTel(normalizedlink)
         ? null

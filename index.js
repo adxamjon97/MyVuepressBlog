@@ -45,7 +45,7 @@ module.exports = themeConfig => {
       },
     ],
     globalPagination: {
-      lengthPerPage: 6,
+      lengthPerPage: 9,
     },
   }
 
@@ -53,9 +53,9 @@ module.exports = themeConfig => {
   const isFeedEnabled = themeConfig.feed && themeConfig.feed.canonical_base
   if (isFeedEnabled) {
     const {
-      rss = true,
-      atom = true,
-      json = true,
+      rss = false,
+      atom = false,
+      json = false,
       ...feedOptions
     } = themeConfig.feed
     resolvedFeedOptions = Object.assign({}, feedOptions, {
@@ -133,9 +133,7 @@ module.exports = themeConfig => {
      */
     extendPageData(pageCtx) {
       const strippedContent = pageCtx._strippedContent
-      if (!strippedContent) {
-        return
-      }
+      if (!strippedContent) return
       if (themeConfig.summary) {
         pageCtx.summary =
           removeMd(

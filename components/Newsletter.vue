@@ -16,6 +16,7 @@
           autocorrect="off"
           data-cy="email"
         />
+        
         <button type="submit" class="newsletter__button" data-cy="submit">
           {{ slotProps.submitText }}
         </button>

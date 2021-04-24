@@ -1,31 +1,90 @@
 <template>
-<section id="header-wrapper">
-<header id="header">
-<div class="header-wrapper">
-<nav class="navbar navbar-expand-md navbar-light bg-white fixed-top">
-<div class="container">
-<NavLink link="/" class="navbar-brand"><img :src="($withBase)($themeConfig.logo)"> {{ $site.title }} </NavLink>
-<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
-<span class="navbar-toggler-icon"></span>
-</button>
-<div class="collapse navbar-collapse" id="navbarsExampleDefault">
-<ul v-if="$themeConfig.nav" class="navbar-nav ml-auto">
-<li
-v-for="item in $themeConfig.nav"
-:key="item.text"
-class="nav-item"
->
-<NavLink :link="item.link" class="nav-link">{{ item.text }}</NavLink>
-</li>
-<SearchBox />
-<Feed />
-</ul>
-</div>
-</div>
-</nav>
-</div>
-</header>
-</section>
+	<section id="header-wrapper">
+		<header id="header">
+			<div class="header-wrapper">
+				<nav class="navbar navbar-expand-md navbar-light bg-white fixed-top">
+					<div class="container">
+						<NavLink link="/" class="navbar-brand">
+
+<svg width=80 viewBox="0 0 330 220" version="1.1" id="svg_null">
+	<g id="root" stroke="none" 
+			stroke-width="1" fill="none" 
+			fill-rule="evenodd">
+			<!-- <rect id="background.primary" -->
+		<!--
+                <rect id="background.primary" 
+				fill="#364f6b" x="0" y="0" width="320" 
+				height="320">
+		</rect>-->
+	
+		<g id="shape" transform="translate(10, 17)" 
+				fill="rgba(3, 168, 124,.5)">
+			<polygon id="shape.secondary" opacity=".5" 
+				points="50 100 100 200 0 200" fill="rgba(3, 168, 124,.6)">
+			</polygon>
+			
+			<polygon id="shape.secondary" opacity=".7" 
+				points="125 50 200 200 50 200" fill="rgba(3, 168, 124,.7)">
+			</polygon>
+			
+			<polygon id="shape.secondary" opacity=".9" 
+				points="200 0 300 200 100 200" fill="rgba(3, 168, 124,.8)">
+			</polygon>
+		</g>
+	
+		<g id="Group" transform="translate(-80, 100)">
+			<rect id="Rectangle-15" x="0" y="0" 
+				width="420" height="70">
+			</rect>
+			
+			<text id="headerText" 
+					font-family="Amiri" 
+					font-size="100" 
+					font-weight="950" 
+					line-spacing="70" 
+					fill="#000" 
+					data-text-alignment="c" 
+					font-style="italic">
+				<tspan x="85" y="53">MyPost</tspan>
+			</text>
+		</g>
+	</g>
+</svg>
+						
+							<!-- <img :src="($withBase)($themeConfig.logo)"> 
+							
+							{{ $site.title }}--> 
+						</NavLink>
+						
+						<button class="navbar-toggler" type="button" 
+								data-toggle="collapse" 
+								data-target="#navbarsExampleDefault" 
+								aria-controls="navbarsExampleDefault" 
+								aria-expanded="false" 
+								aria-label="Toggle navigation">
+						
+							<span class="navbar-toggler-icon"></span>
+						</button>
+						
+						<div class="collapse navbar-collapse" id="navbarsExampleDefault">
+							<ul v-if="$themeConfig.nav" class="navbar-nav ml-auto">
+								<li v-for="item in $themeConfig.nav"
+									:key="item.text" class="nav-item">
+									<NavLink :link="item.link" class="nav-link">
+										{{ item.text }}
+									</NavLink>
+								</li>
+								
+								<SearchBox />
+								
+								<!-- <Feed /> -->
+							</ul>
+						</div>
+					</div>
+				</nav>
+			</div>
+		</header>
+	</section>
 </template>
 
 <script>

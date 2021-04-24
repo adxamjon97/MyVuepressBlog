@@ -1,63 +1,69 @@
 <template>
-<div id="vuepress-theme-blog__post-layout">
+	<div id="vuepress-theme-blog__post-layout">
+		<article id="MyPostContent" class="vuepress-blog-theme-content"
+					itemscope
+					itemtype="https://schema.org/BlogPosting">
 
-<article
-class="vuepress-blog-theme-content"
-itemscope
-itemtype="https://schema.org/BlogPosting"
->
+			<div class="row justify-content-center">
+			  <div id="Post-1" class="col-md">
+				  <header>
 
-<div class="row justify-content-center">
-  <div class="col-md-8">
-  <header>
+					  <span class="text-muted">
+					  	<PostMeta :date="$frontmatter.date" />
+					  </span>
+					  
+					  <h1 align=center
+					  		class="article-head mt-3"
+					  		itemprop="name headline">
+					  	{{ $frontmatter.title }}
+					  </h1>
+					  
+					  <!-- 
+					  <p class="lead">
+					  	{{ $frontmatter.description }}
+					  </p>
+					  -->
+					  
+					  <!-- <Avatar /> -->
 
-  <span class="text-muted"><PostMeta  :date="$frontmatter.date" /></span>
-  <h1 class="article-head mt-3" itemprop="name headline">
-  {{ $frontmatter.title }}
-  </h1>
-  <p class="lead">{{ $frontmatter.description }}</p>
+				  </header>
+			  </div>
+			</div>
 
-  <Avatar />
+			<div class="row justify-content-center text-center mt-4 mb-40">
+			  <div class="col-md">
+				<img class="featuredimg" :src="$frontmatter.featuredimg">
+			  </div>
+			</div>
 
-  </header>
-  </div>
-</div>
+			<div id="Post-3" class="row justify-content-center">
+			  <div class="col-md">
+			  	<Content itemprop="articleBody" />
 
-<div class="row justify-content-center text-center mt-4 mb-40">
-  <div class="col-md-9">
-    <img class="featuredimg" :src="$frontmatter.featuredimg">
-  </div>
-</div>
+			  	<!-- <PostMeta :tags="$frontmatter.tags"/> -->
 
-<div class="row justify-content-center">
-  <div class="col-md-8">
-  <Content  itemprop="articleBody" />
+			  </div>
+			</div>
 
+		</article>
+		
+		<!--
+		<div class="row justify-content-center">
+		  <div class="col-md-9">
+			<Newsletter v-if="$service.email.enabled" />
+			<Comment />
+		  </div>
+		</div> -->
 
-  <PostMeta
-  :tags="$frontmatter.tags"/>
-
-  </div>
-</div>
-
-</article>
-
-<div class="row justify-content-center">
-  <div class="col-md-9">
-    <Newsletter v-if="$service.email.enabled" />
-    <Comment />
-  </div>
-</div>
-
-<Toc />
-</div>
+		<Toc />
+	</div>
 </template>
 
 <script>
-import Toc from '@theme/components/Toc.vue'
-import PostMeta from '@theme/components/PostMeta.vue'
-import Avatar from '@theme/components/Avatar.vue'
-import { Comment } from '@vuepress/plugin-blog/lib/client/components'
+import Toc       from '@theme/components/Toc.vue'
+import PostMeta  from '@theme/components/PostMeta.vue'
+import Avatar    from '@theme/components/Avatar.vue'
+import {Comment} from '@vuepress/plugin-blog/lib/client/components'
 
 export default {
   components: {

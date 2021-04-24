@@ -1,14 +1,16 @@
 <template>
   <div id="vuepress-theme-blog__global-layout">
     <Header />
-    <MobileHeader
-      :is-open="isMobileHeaderOpen"
+    <MobileHeader :is-open="isMobileHeaderOpen"
       @toggle-sidebar="isMobileHeaderOpen = !isMobileHeaderOpen"
     />
+    
     <div class="container wrapmain" @click="isMobileHeaderOpen = false">
       <DefaultGlobalLayout />
     </div>
+    
     <Footer />
+    
   </div>
 </template>
 
