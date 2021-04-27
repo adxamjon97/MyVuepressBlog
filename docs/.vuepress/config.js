@@ -1,9 +1,25 @@
 module.exports = {
-  title: 'Bu mening yangiliglarim',
+  title: 'MyBlog',
   base: '/',
-  description: 'Bu sahifada men o\'z yangiliklarimni qo\'yib boraman',
+  description: 'Ushbu sahifada men yangiliklarimni joylashtiraman',
   logo: '/assets/img/logo.svg',
   theme: require.resolve('../../'),
+  
+  head: [
+    ['link', { rel:  'icon', 	href: '/logo.png' }],
+    ['link', { rel:  'manifest', href: '/manifest.json' }],
+    
+    ['meta', { name: 'theme-color', 							content: '#3eaf7c' }],
+    ['meta', { name: 'apple-mobile-web-app-capable', 			content: 'yes' }],
+    ['meta', { name: 'apple-mobile-web-app-status-bar-style', 	content: 'black' }],
+    
+    ['link', { rel:  'apple-touch-icon', href: 'logo.png' }],
+    ['link', { rel:  'mask-icon', 		 href: 'logo.svg', color: '#3eaf7c' }],
+    
+    ['meta', { name: 'msapplication-TileImage', content: '/icons/msapplication-icon-144x144.png' }],
+    ['meta', { name: 'msapplication-TileColor', content: '#000000' }]
+  ],
+  
   plugins: [
   	'latex'
   ],
@@ -22,18 +38,9 @@ module.exports = {
           type: 'github',
           link: 'https://github.com/adxamjon97/adxamjon97.github.io',
         },
-        {
-          type: 'mail',
-          link: '#',
-        },
-        {
-          type: 'phone',
-          link: '#',
-        },
-        {
-          type: 'web',
-          link: '#',
-        }
+        { type: 'mail',  link: '#', },
+        { type: 'phone', link: '#', },
+        { type: 'web', 	 link: '#', }
       ],
       copyright: [
         {

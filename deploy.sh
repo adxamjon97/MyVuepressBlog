@@ -22,5 +22,5 @@ git push -f https://github.com/adxamjon97/adxamjon97.github.io.git master
 
 # if you are deploying to https://<USERNAME>.github.io/<REPO>
 #git push -f git@github.com:wowthemesnet/vuepress-theme-mediumish.git master:gh-pages
-
+#git push -f git@github.com:adxamjon97/adxamjon97.git master:gh-pages
 cd -

@@ -9,8 +9,10 @@ module.exports = themeConfig => {
   themeConfig = Object.assign(themeConfig, {
     logo: '/assets/img/logo.png',
     nav: themeConfig.nav || [
-      {text: 'Blog', link: '/',},
-      {text: 'Tags', link: '/tag/',},
+      {text: 'Blog',     link: '/',},
+      {text: 'Projects', link: '/projects/',},
+      {text: 'Tags',     link: '/tag/',},
+      {text: 'About',    link: '/about',},
     ],
     summary: themeConfig.summary === undefined ? true : themeConfig.summary,
     summaryLength:
@@ -25,7 +27,8 @@ module.exports = themeConfig => {
    */
   const defaultBlogPluginOptions = {
     directories: [
-      {id: 'post', dirname: '_posts', path: '/',},
+      {id: 'post',     dirname: '_posts',    path: '/',},
+      {id: 'projects', dirname: '_projects', path: '/projects/',},
     ],
     frontmatters: [
       {id: 'tag', keys: ['tags'], path: '/tag/',},
