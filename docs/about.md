@@ -1,1 +1,3 @@
 # About Me
+
+Biz haqimizda ...

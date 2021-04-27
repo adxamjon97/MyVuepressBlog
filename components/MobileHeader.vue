@@ -14,7 +14,6 @@
       		
       		<div class="mobile-menu-wrapper" 
       				:class="{ open: isOpen }">
-        	
         		<hr class="menu-divider" />
     			
     			<ul v-if="$themeConfig.nav" class="mobile-nav">

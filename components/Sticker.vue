@@ -1,10 +1,7 @@
 <template>
-  <component
-    :is="tag || 'div'"
-    class="sticker"
-    :class="needFloat ? ['stick-float'] : undefined"
-    :style="needFloat ? { bottom: `${stickBottom}px` } : undefined"
-  >
+  <component :is="tag || 'div'" class="sticker"
+    	:class="needFloat ? ['stick-float'] : undefined"
+    	:style="needFloat ? { bottom: `${stickBottom}px` } : undefined">
     <slot></slot>
   </component>
 </template>
@@ -28,13 +25,8 @@ export default {
     },
   },
 
-  mounted() {
-    this.stickHandle()
-  },
-
-  beforeDestroy() {
-    this.unStick()
-  },
+  mounted() { this.stickHandle() },
+  beforeDestroy() { this.unStick() },
 
   methods: {
     stickHandle() {

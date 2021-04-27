@@ -2,7 +2,6 @@
 	<div id="">
 		<div class="card-panel-content row" 
 				itemscope itemtype="http://schema.org/Blog">
-
 			<article  v-for="page in pages"
 					:key="page.key"
 					itemprop="blogPost"
@@ -37,6 +36,7 @@
   						<h2 align=center class="heading" itemprop="name headline">
 	   						{{ page.title }}
   						</h2>
+  						
   						<!--
   						<p align=justify itemprop="description">{{ page.frontmatter.summary || page.summary }}</p>
 						-->

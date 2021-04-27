@@ -1,15 +1,12 @@
 <template>
   <Sticker v-if="visible" class="vuepress-toc" v-bind="$attrs">
-    <div
-      v-for="(item, index) in $page.headers"
-      ref="chairTocItem"
-      :key="index"
-      class="vuepress-toc-item"
-      :class="[
-        `vuepress-toc-h${item.level}`,
-     	{ active: activeIndex === index },
-      ]"
-    >
+    <div v-for="(item, index) in $page.headers"
+      	ref="chairTocItem" :key="index"
+      	class="vuepress-toc-item"
+      	:class="[
+        	`vuepress-toc-h${item.level}`,
+     		{ active: activeIndex === index },
+      	]">
       <a :href="`#${item.slug}`" :title="item.title">{{ item.title }}</a>
     </div>
   </Sticker>

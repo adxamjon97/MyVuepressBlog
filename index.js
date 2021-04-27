@@ -9,14 +9,8 @@ module.exports = themeConfig => {
   themeConfig = Object.assign(themeConfig, {
     logo: '/assets/img/logo.png',
     nav: themeConfig.nav || [
-      {
-        text: 'Blog',
-        link: '/',
-      },
-      {
-        text: 'Tags',
-        link: '/tag/',
-      },
+      {text: 'Blog', link: '/',},
+      {text: 'Tags', link: '/tag/',},
     ],
     summary: themeConfig.summary === undefined ? true : themeConfig.summary,
     summaryLength:
@@ -31,18 +25,10 @@ module.exports = themeConfig => {
    */
   const defaultBlogPluginOptions = {
     directories: [
-      {
-        id: 'post',
-        dirname: '_posts',
-        path: '/',
-      },
+      {id: 'post', dirname: '_posts', path: '/',},
     ],
     frontmatters: [
-      {
-        id: 'tag',
-        keys: ['tags'],
-        path: '/tag/',
-      },
+      {id: 'tag', keys: ['tags'], path: '/tag/',},
     ],
     globalPagination: {
       lengthPerPage: 9,
@@ -53,14 +39,14 @@ module.exports = themeConfig => {
   const isFeedEnabled = themeConfig.feed && themeConfig.feed.canonical_base
   if (isFeedEnabled) {
     const {
-      rss = false,
+      rss  = false,
       atom = false,
       json = false,
       ...feedOptions
     } = themeConfig.feed
     resolvedFeedOptions = Object.assign({}, feedOptions, {
       feeds: {
-        rss2: { enable: rss },
+        rss2:  { enable: rss },
         atom1: { enable: atom },
         json1: { enable: json },
       },
@@ -97,9 +83,7 @@ module.exports = themeConfig => {
     ['@vuepress/medium-zoom', true],
     [
       '@vuepress/search',
-      {
-        searchMaxSuggestions: 10,
-      },
+      { searchMaxSuggestions: 10, },
     ],
     ['@vuepress/blog', blogPluginOptions],
     ['smooth-scroll', enableSmoothScroll],
@@ -111,10 +95,7 @@ module.exports = themeConfig => {
   if (themeConfig.pwa) {
     plugins.push([
       '@vuepress/pwa',
-      {
-        serviceWorker: true,
-        updatePopup: true,
-      },
+      { serviceWorker: true, updatePopup: true, },
     ])
   }
 

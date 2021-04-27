@@ -5,7 +5,7 @@ tags:
   - markdown
   - vuepress
 author: Sal
-featuredimg: https://images.unsplash.com/photo-1464052259809-c19ec2ddfc5f?ixlib=rb-1.2.1&auto=format&fit=crop&w=1355&q=80
+featuredimg: /assets/img/img_5.jpg
 summary: The number of confirmed COVID-19 cases jumped.
 ---
 

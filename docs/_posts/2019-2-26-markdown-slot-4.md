@@ -5,7 +5,7 @@ tags:
   - markdown
   - vuepress
 author: John Doe
-featuredimg: https://images.unsplash.com/photo-1566224425427-998503a013f6?ixlib=rb-1.2.1&auto=format&fit=crop&w=898&q=80
+featuredimg: /assets/img/img_6.jpg
 summary: Implementing markdown files, provders of metadata.
 ---
 

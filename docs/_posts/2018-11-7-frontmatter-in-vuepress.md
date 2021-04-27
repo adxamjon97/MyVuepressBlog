@@ -5,7 +5,7 @@ tags:
   - frontmatter
   - vuepress
 author: Sal
-featuredimg: https://images.unsplash.com/photo-1523978591478-c753949ff840?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjExMzk2fQ&auto=format&fit=crop&w=1350&q=80
+featuredimg: /assets/img/img_1.jpg
 summary: I have travelled for so long that I can't even remember my own city.
 
 ---

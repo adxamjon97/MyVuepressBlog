@@ -3,11 +3,9 @@
 		<article id="MyPostContent" class="vuepress-blog-theme-content"
 					itemscope
 					itemtype="https://schema.org/BlogPosting">
-
 			<div class="row justify-content-center">
 			  <div id="Post-1" class="col-md">
 				  <header>
-
 					  <span class="text-muted">
 					  	<PostMeta :date="$frontmatter.date" />
 					  </span>
@@ -18,8 +16,7 @@
 					  	{{ $frontmatter.title }}
 					  </h1>
 					  
-					  <!-- 
-					  <p class="lead">
+					  <!--<p class="lead">
 					  	{{ $frontmatter.description }}
 					  </p>
 					  -->
@@ -47,13 +44,12 @@
 
 		</article>
 		
-		<!--
-		<div class="row justify-content-center">
+		<!--<div class="row justify-content-center">
 		  <div class="col-md-9">
 			<Newsletter v-if="$service.email.enabled" />
 			<Comment />
 		  </div>
-		</div> -->
+		</div>-->
 
 		<Toc />
 	</div>

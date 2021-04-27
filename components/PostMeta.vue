@@ -1,13 +1,13 @@
 <template>
 	<div class="post-meta">
-		<div v-if="author"
+		<!--<div v-if="author"
   				class="post-meta-author"
   				itemprop="publisher author"
   				itemtype="http://schema.org/Person"
   				itemscope>
   			<span itemprop="name">{{ author }}</span>
   			<span v-if="location" itemprop="address"> &nbsp; in {{ location }}</span>
-  		</div>
+  		</div>-->
   		
   		<!-- vaqtni ko'rsatadi
   		<div v-if="date" class="post-meta-date">

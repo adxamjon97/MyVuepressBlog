@@ -2,13 +2,16 @@ module.exports = {
   title: 'Bu mening yangiliglarim',
   base: '/',
   description: 'Bu sahifada men o\'z yangiliklarimni qo\'yib boraman',
-  logo: './assets/img/logo.png',
+  logo: '/assets/img/logo.svg',
   theme: require.resolve('../../'),
+  plugins: [
+  	'latex'
+  ],
   themeConfig: {
   authors: [
       {
       name: 'Adxamjon',
-      avatar: '/assets/img/sal.jpg',
+      avatar: '/assets/img/avatar.jpg',
       link: '#',
       linktext: 'Follow',
       },

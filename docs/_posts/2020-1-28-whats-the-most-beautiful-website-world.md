@@ -5,7 +5,7 @@ tags:
   - frontmatter
   - vuepress
 author: John Doe
-featuredimg: 'https://images.unsplash.com/photo-1568777036071-f9a769596a49?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjE3MzYxfQ&auto=format&fit=crop&w=1351&q=80'
+featuredimg: /assets/img/img_2.jpg
 summary: Any website that uses a static generator.
 ---
 
