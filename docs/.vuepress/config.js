@@ -21,16 +21,52 @@ module.exports = {
   ],
   
   plugins: [
-  	'latex'
+  	'latex',
+  	'img-lazy',
+  	[
+      'vuepress-plugin-mathjax',
+      { target: 'svg', macros: {'*': '\\times',},},
+    ],
+    
+    ['container', {
+      type: 'right',
+      defaultTitle: '',
+    }],
+
+    ['container', {
+      type: 'blok',
+      before: info => `<div class="custom-block blok">`,
+      after: '</div>',
+    }],
+    
+    ['container', {
+      type: 'yashil',
+      before: info => `<div class="custom-block yashil">`,
+      after: '</div>',
+    }],
+    
+    ['container', {
+      type: 'sariq',
+      before: info => `<div class="custom-block sariq">`,
+      after: '</div>',
+    }],
+    
+    ['container', {
+      type: 'qizil',
+      before: info => `<div class="custom-block qizil">`,
+      after: '</div>',
+    }],
+    
+    ['container', {
+      type: 'detal',
+      before: info => `<details class="custom-block detal">`,
+      after: '</details>',
+    }],
   ],
   themeConfig: {
-  authors: [
-      {
-      name: 'Adxamjon',
-      avatar: '/assets/img/avatar.jpg',
-      link: '#',
-      linktext: 'Follow',
-      },
+	authors: [
+      { name: 'Adxamjon', avatar: '/assets/img/avatar.jpg',
+        link: '#', linktext: 'Follow',},
     ],
     footer: {
       contact: [

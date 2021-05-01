@@ -12,69 +12,72 @@
 				
 				<NavLink :link="page.path" class="heading">
 				
-				<div id="MyPost" class="entry card h-100">
-					<div class="card-header-image">
-  						<NavLink :link="page.path">
-  							<img :src="page.frontmatter.featuredimg"/>
-  						</NavLink>
-					</div>
+					<div id="MyPost" class="entry card h-100">
+						<div class="card-header-image">
+	  						<!--<NavLink :link="page.path">-->
+	  							<ImgLazy :src="page.frontmatter.featuredimg"/>
+	  						<!--</NavLink>-->
+						</div>
 
-					<div class="card-inside">
-					    <!--
-  						<div class="card-subheading">
-    						<div v-if="page.frontmatter.tags"
-    								class="ui-post-meta ui-post-tag"
-    								itemprop="keywords">
-    							<router-link v-for="tag in resolvePostTags(page.frontmatter.tags)"
-    									:key="tag" :to="'/tag/' + tag">
-    								{{ tag }}
-    							</router-link>
-    						</div>
-  						</div>
-  						-->
-  						<br/>
-  						<h2 align=center class="heading" itemprop="name headline">
-	   						{{ page.title }}
-  						</h2>
-  						
-  						<!--
-  						<p align=justify itemprop="description">{{ page.frontmatter.summary || page.summary }}</p>
+						<div class="card-inside">
+							<!--
+	  						<div class="card-subheading">
+								<div v-if="page.frontmatter.tags"
+										class="ui-post-meta ui-post-tag"
+										itemprop="keywords">
+									<router-link v-for="tag in resolvePostTags(page.frontmatter.tags)"
+											:key="tag" :to="'/tag/' + tag">
+										{{ tag }}
+									</router-link>
+								</div>
+	  						</div>
+	  						-->
+	  						<!--<br/>-->
+	  						<h2 align=center valign=center 
+	  								class="heading" 
+	  								itemprop="name headline"
+	  								style="margin: 10px 1px 10px 1px">
+		   						{{ page.title }}
+	  						</h2>
+	  						
+	  						<!--
+	  						<p align=justify itemprop="description">{{ page.frontmatter.summary || page.summary }}</p>
+							-->
+						</div>
+						<!--
+						<div class="meta-bottom mt-auto">
+	  						<div v-if="$themeConfig.authors">
+	  							<span v-for="author in $themeConfig.authors"
+										:key="author.name"
+	  									class="nav-item">
+	  								<div class="d-flex">
+	  									<a class="profile-avatar">
+	  										<img v-if="author.name === page.frontmatter.author" :src="($withBase)(author.avatar)" class="avatar-image" :alt="author.name">
+	  									</a>
+	  									<div class="meta">
+	  										<div  v-if="author.name === page.frontmatter.author">
+	  											<span class="username">
+	  												{{author.name}}
+	  											</span> &nbsp;
+	  										</div>
+	  										
+	  										<div> </div>
+	  									</div>
+	  								</div>
+	  							</span>
+	  						</div>
+
+	  						<div v-if="page.frontmatter.date" class="date">
+	  							<time pubdate
+	  								itemprop="datePublished"
+	  								:datetime="page.frontmatter.date">
+	  								{{ resolvePostDate(page.frontmatter.date) }}
+	  							</time> 
+	  						</div>
+						</div>
 						-->
+						
 					</div>
-					<!--
-					<div class="meta-bottom mt-auto">
-  						<div v-if="$themeConfig.authors">
-  							<span v-for="author in $themeConfig.authors"
-									:key="author.name"
-  									class="nav-item">
-  								<div class="d-flex">
-  									<a class="profile-avatar">
-  										<img v-if="author.name === page.frontmatter.author" :src="($withBase)(author.avatar)" class="avatar-image" :alt="author.name">
-  									</a>
-  									<div class="meta">
-  										<div  v-if="author.name === page.frontmatter.author">
-  											<span class="username">
-  												{{author.name}}
-  											</span> &nbsp;
-  										</div>
-  										
-  										<div> </div>
-  									</div>
-  								</div>
-  							</span>
-  						</div>
-
-  						<div v-if="page.frontmatter.date" class="date">
-  							<time pubdate
-  								itemprop="datePublished"
-  								:datetime="page.frontmatter.date">
-  								{{ resolvePostDate(page.frontmatter.date) }}
-  							</time> 
-  						</div>
-					</div>
-					-->
-					
-				</div>
 				</NavLink>
 			</article>
 		</div>
@@ -95,47 +98,42 @@ import {
   SimplePagination,
 } from '@vuepress/plugin-blog/lib/client/components'
 
+import ImgLazy 	from 'vuepress-plugin-img-lazy/ImgLazy'
+
 export default {
+	components: { ImgLazy },
+	data() {
+		return { paginationComponent: null, }
+	},
 
+	computed: {
+    	pages() { return this.$pagination.pages },
+  	},
 
-  data() {
-    return {
-      paginationComponent: null,
-    }
-  },
+	created() {
+    	this.paginationComponent = this.getPaginationComponent()
+  	},
 
-  computed: {
-    pages() {
-      return this.$pagination.pages
-    },
-  },
+	methods: {
+		getPaginationComponent() {
+			const n = THEME_BLOG_PAGINATION_COMPONENT
+			if (n === 'Pagination') 	  return Pagination
+			if (n === 'SimplePagination') return SimplePagination
 
-  created() {
-    this.paginationComponent = this.getPaginationComponent()
-  },
+			return Vue.component(n) || Pagination
+    	},
 
-  methods: {
-    getPaginationComponent() {
-      const n = THEME_BLOG_PAGINATION_COMPONENT
-      if (n === 'Pagination') return Pagination
+    	resolvePostDate(date) {
+      		return dayjs(date).format(
+        		this.$themeConfig.dateFormat || 'ddd MMM DD YYYY'
+      		)
+    	},
 
-      if (n === 'SimplePagination') return SimplePagination
-      
-
-      return Vue.component(n) || Pagination
-    },
-
-    resolvePostDate(date) {
-      return dayjs(date).format(
-        this.$themeConfig.dateFormat || 'ddd MMM DD YYYY'
-      )
-    },
-
-    resolvePostTags(tags) {
-      if (!tags || Array.isArray(tags)) return tags
-      return [tags]
-    },
-  },
+    	resolvePostTags(tags) {
+      		if (!tags || Array.isArray(tags)) return tags
+      		return [tags]
+    	},
+  	},
 }
 </script>
 

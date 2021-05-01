@@ -9,16 +9,15 @@ module.exports = themeConfig => {
   themeConfig = Object.assign(themeConfig, {
     logo: '/assets/img/logo.png',
     nav: themeConfig.nav || [
-      {text: 'Blog',     link: '/',},
-      {text: 'Projects', link: '/projects/',},
-      {text: 'Tags',     link: '/tag/',},
-      {text: 'About',    link: '/about',},
+      {text: 'Blog',        link: '/',},
+      {text: 'Loyihalar',   link: '/projects/',},
+      {text: 'Teglar',      link: '/tag/',},
+      {text: 'Men haqimda', link: '/about',},
     ],
     summary: themeConfig.summary === undefined ? true : themeConfig.summary,
     summaryLength:
       typeof themeConfig.summaryLength === 'number'
-        ? themeConfig.summaryLength
-        : 200,
+        ? themeConfig.summaryLength : 200,
     pwa: !!themeConfig.pwa,
   })
 
@@ -33,9 +32,7 @@ module.exports = themeConfig => {
     frontmatters: [
       {id: 'tag', keys: ['tags'], path: '/tag/',},
     ],
-    globalPagination: {
-      lengthPerPage: 9,
-    },
+    globalPagination: { lengthPerPage: 9, },
   }
 
   let resolvedFeedOptions
@@ -89,7 +86,7 @@ module.exports = themeConfig => {
       { searchMaxSuggestions: 10, },
     ],
     ['@vuepress/blog', blogPluginOptions],
-    ['smooth-scroll', enableSmoothScroll],
+    ['smooth-scroll',  enableSmoothScroll],
   ]
 
   /**
@@ -109,9 +106,7 @@ module.exports = themeConfig => {
         ? themeConfig.paginationComponent
         : 'Pagination',
     },
-    alias: {
-      fonts: path.resolve(__dirname, 'fonts'),
-    },
+    alias: { fonts: path.resolve(__dirname, 'fonts'), },
     /**
      * Generate summary.
      */

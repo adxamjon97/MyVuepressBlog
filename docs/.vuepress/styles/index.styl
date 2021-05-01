@@ -4,62 +4,90 @@
  * ref：https://v1.vuepress.vuejs.org/config/#index-styl
  */
 
-body{
-	background: #ededed;
-}
+/* costom-block */
+.custom-block  
+  padding           0 .4rem 0 .4rem
+  border-left-width .5rem
+  border-left-style solid
+  margin            .5rem 0
 
-#MyPost{
-    background-color: white;
-    box-shadow: 
-		0 0.46875rem 2.1875rem  rgba(90,97,105,.1), 
-		0 0.9375rem  1.40625rem rgba(90,97,105,.1), 
-		0 0.25rem    0.53125rem rgba(90,97,105,.12), 
-        0 0.125rem   0.1875rem  rgba(90,97,105,.1);
-    transition: box-shadow 1s;   
-    cursor: pointer;
-}
+.blok
+  background-color #eee
+  border-color     black
+  
+.yashil
+  background-color #f3f5f7
+  border-color     #42b983
 
-#MyPost:hover{
-    box-shadow: 
-        0 0.46875rem 2.1875rem  rgba(3, 168, 124,.5), 
-        0 0.9375rem  1.40625rem rgba(3, 168, 124,.3), 
-        0 0.25rem    0.53125rem rgba(3, 168, 124,.3), 
-        0 0.125rem   0.1875rem  rgba(3, 168, 124,.3);;  
-}
+.sariq
+  background-color rgba(255,229,100,.4)
+  border-color 	   #e7c000
+  color 		   #6b5900
+  
+.qizil
+  background-color #ffe6e6
+  border-color     #c00
+  color            #4d0000
 
-#MyPost:hover a{
-	color: $accentColor;
-	//transition: color 1s;
-}
+.detal
+  background-color #eee
+  
+  display       block
+  position      relative
+  border-radius 2px
+  margin        .5em 0
+  padding       .5em
+  
+body
+  background #ededed
 
-#MyPostContent{
-	background-color: white;
-    box-shadow: 
-		0 0.46875rem 2.1875rem  rgba(90,97,105,.1), 
-		0 0.9375rem  1.40625rem rgba(90,97,105,.1), 
-		0 0.25rem    0.53125rem rgba(90,97,105,.12), 
-        0 0.125rem   0.1875rem  rgba(90,97,105,.1);
-	background-color: white;
-}
+/* My Block */
+#MyPost
+  background-color white
+  box-shadow:
+	0 0.46875rem 2.1875rem  rgba(90,97,105,.1), 
+	0 0.9375rem  1.40625rem rgba(90,97,105,.1), 
+	0 0.25rem    0.53125rem rgba(90,97,105,.12), 
+    0 0.125rem   0.1875rem  rgba(90,97,105,.1);
+  transition box-shadow 1s   
+  cursor pointer
+
+
+#MyPost:hover
+  box-shadow:
+    0 0.46875rem 2.1875rem  rgba(3, 168, 124,.5), 
+    0 0.9375rem  1.40625rem rgba(3, 168, 124,.3), 
+    0 0.25rem    0.53125rem rgba(3, 168, 124,.3), 
+    0 0.125rem   0.1875rem  rgba(3, 168, 124,.3);
+
+
+#MyPost:hover a
+  color $accentColor
+  //transition: color 1s
+
+#MyPostContent
+  background-color white
+  box-shadow:
+	0 0.46875rem 2.1875rem  rgba(90,97,105,.1), 
+	0 0.9375rem  1.40625rem rgba(90,97,105,.1), 
+	0 0.25rem    0.53125rem rgba(90,97,105,.12), 
+    0 0.125rem   0.1875rem  rgba(90,97,105,.1);
+  background-color white
 
 #Post-1 p,
-#Post-3{
-	padding: 0 3% 0 3%;
-}
+#Post-3
+  padding 0 3% 0 3%
 
-#Post-3 p{
-	text-align: justify;
-	text-indent: 5%;
-	
-}
+#Post-3 p
+  text-align justify
+  text-indent 5%
 
 #Post-1 h1, 
 #Post-3 h1,
 #Post-3 h2,
-#Post-3 h3{
-	text-align: center;
-	padding: 0 8% 0 8%;
-}
+#Post-3 h3
+  text-align center
+  padding 0 8% 0 8%
 
 
 

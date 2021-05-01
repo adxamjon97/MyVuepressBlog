@@ -1,0 +1,9 @@
+{
+  "name": "My Blog",
+  "short_name": "MyBlog",
+  "theme_color": "#21f3a0",
+  "background_color": "#ffffff",
+  "display": "standalone",
+  "scope": "/",
+  "start_url": "/"
+}

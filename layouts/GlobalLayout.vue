@@ -10,7 +10,7 @@
       <DefaultGlobalLayout />
     </div>
     
-    <Footer />
+    <Footer style="padding: 10px" />
     
   </div>
 </template>
@@ -20,6 +20,7 @@ import GlobalLayout from '@app/components/GlobalLayout.vue'
 import Header 		from '@theme/components/Header.vue'
 import MobileHeader from '@theme/components/MobileHeader.vue'
 import Footer 		from '@theme/components/Footer.vue'
+import ImgLazy 		from 'vuepress-plugin-img-lazy/ImgLazy'
 
 export default {
   components: {
@@ -27,6 +28,7 @@ export default {
     Header,
     MobileHeader,
     Footer,
+    ImgLazy,
   },
 
   data() {

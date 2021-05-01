@@ -43,7 +43,11 @@ Just one `Layout.vue` might not be enough, and you might also want to define mor
 
 So it's time to reorganize your theme, an agreed theme directory structure is as follows:
 
-::: vue
+::: yashil
+buni esda tutish kerek
+:::
+
+``` vue
 theme
 ├── `global-components`
 │   └── xxx.vue
@@ -61,7 +65,7 @@ theme
 ├── `index.js`
 ├── `enhanceApp.js`
 └── package.json
-:::
+```
 
 - `theme/global-components`: Components under this directory will be automatically registered as global components. For details, please refer to [@vuepress/plugin-register-components](https://github.com/vuejs/vuepress/tree/master/packages/@vuepress/plugin-register-components).
 - `theme/components`: Your components.
@@ -71,7 +75,7 @@ theme
 - `theme/index.js`: Entry file of theme configuration.
 - `theme/enhanceApp.js`: Theme level enhancements.
 
-::: warning Note
+::: sariq Note
 When you publish your theme as an NPM package, if you don't have any theme configuration, that means you don't have `theme/index.js`, you'll need to set the `"main"` field  to `layouts/Layout.vue` in `package.json`, only in this way VuePress can correctly resolve the theme.
 ```json
 {
@@ -87,25 +91,25 @@ When you publish your theme as an NPM package, if you don't have any theme confi
 
 Suppose your theme layouts folder is as follows:
 
-::: vue
+``` vue
 theme
 └── `layouts`
     ├── Layout.vue
     ├── AnotherLayout.vue
     └── 404.vue
-:::
+```
 
 Then, all the pages will use `Layout.vue` as layout component by default, while the routes not matching will use `404.vue`.
 
 If you want to switch the layout of some pages to `AnotherLayout.vue`, you just need to update the frontmatter of this page:
 
-```markdown
+``` markdown
 ---
 layout: AnotherLayout
 ---
-````
+```
 
-::: tip
+::: yashil
 Each layout component may render distinct pages. If you want to apply some global UI (e.g. global header), consider using [globalLayout](./option-api.md#globallayout)。
 :::
 
@@ -165,7 +169,7 @@ If the user provided `themeConfig` in `.vuepress/config.js`, it will also be ava
 
 Finally, don't forget that `this.$route` and `this.$router` are also available as part of Vue Router's API.
 
-::: tip
+::: yashil
   `lastUpdated` is the UNIX timestamp of this file's last git commit, for more details, refer to [Last Updated](../theme/default-theme-config.md#last-updated).
 :::
 

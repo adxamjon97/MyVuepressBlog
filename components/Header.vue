@@ -1,8 +1,8 @@
 <template>
-	<section id="header-wrapper">
-		<header id="header">
-			<div class="header-wrapper">
-				<nav class="navbar navbar-expand-md navbar-light bg-white fixed-top">
+	<section id="header-wrapper" >
+		<header id="header" >
+			<div class="header-wrapper" >
+				<nav class="navbar navbar-expand-md navbar-light bg-white fixed-top" style="padding: 0">
 					<div class="container">
 						<NavLink link="/" class="navbar-brand">
 
