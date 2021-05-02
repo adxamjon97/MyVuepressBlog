@@ -41,6 +41,11 @@
 body
   background #ededed
 
+/*
+* {
+  box-sizing: border-box;
+}
+*/
 /* My Block */
 #MyPost
   background-color white
@@ -74,6 +79,45 @@ body
     0 0.125rem   0.1875rem  rgba(90,97,105,.1);
   background-color white
 
+
+#MyPostContent table
+  border-spacing 0
+  border-collapse collapse
+  border 1px solid #c6cbd1
+  padding 6px 13px
+  margin 7px
+  
+#MyPostContent table tr
+  background-color $bgColor
+  
+#MyPostContent thead
+  display table-header-group
+  vertical-align middle
+  border-color inherit
+  
+#MyPostContent table thead tr th
+  text-align center
+	
+#MyPostContent tr:nth-child(2n),
+#MyPostContent table thead tr
+  background-color #ebf1f2
+
+#MyPostContent table th,
+#MyPostContent table td
+  padding 6px 13px
+  border 1px solid #c6cbd1
+
+/*
+tr { // user agent
+  display: table-row;
+  vertical-align: inherit;
+  border-color: inherit;
+}
+
+tr {
+  background-color: var(--color-bg-primary);
+  border-top: 1px solid var(--color-markdown-table-tr-border);
+}*/
 #Post-1 p,
 #Post-3
   padding 0 3% 0 3%

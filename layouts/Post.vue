@@ -1,8 +1,9 @@
 <template>
 	<div id="vuepress-theme-blog__post-layout">
 		<article id="MyPostContent" class="vuepress-blog-theme-content"
-					itemscope
-					itemtype="https://schema.org/BlogPosting">
+					itemscope>
+					<!--itemtype="https://schema.org/BlogPosting">
+			-->
 			<div class="row justify-content-center">
 			  <div id="Post-1" class="col-md">
 				  <header>
@@ -27,13 +28,13 @@
 			  </div>
 			</div>
 
-			<div class="row justify-content-center text-center mt-4 mb-40">
+			<div class="row justify-content-center text-center mt-4">
 			  <div class="col-md">
 				<img class="featuredimg" :src="$frontmatter.featuredimg">
 			  </div>
 			</div>
 
-			<div id="Post-3" class="row justify-content-center">
+			<div id="Post-3" align="center" class="row justify-content-center">
 			  <div class="col-md">
 			  	<Content itemprop="articleBody" />
 
