@@ -5,7 +5,7 @@ tags:
   - php
   - cheatsheet
   - backand
-featuredimg: /assets/img/img_1.jpg
+featuredimg: /assets/img/php.png
 ---
 
 ## Global o'zgaruvchilari

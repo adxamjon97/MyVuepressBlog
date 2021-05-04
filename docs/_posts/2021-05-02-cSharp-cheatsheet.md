@@ -5,7 +5,7 @@ tags:
   - C#
   - cSharp
   - cheatsheet
-featuredimg: /assets/img/img_1.jpg
+featuredimg: /assets/img/Csharp.jpg
 ---
 ## Hello world
 
@@ -50,44 +50,308 @@ const int x = 3; // o'zgarmas qiymat beriladi const yordamida
 
 ## 1 turdan 2-turga o'tkazish
 
-char   -> int   -> long -> float -> double - anniq emas
+Anniq emas o'zlashtirish
 
-double -> float -> long -> int   -> char   - anniq
-
-graph TD;
-    A-->B;
-    A-->C;
-    B-->D;
-    C-->D;
+```mermaid
+graph LR
+    char  --> int
+    int   --> long 
+    long  --> float 
+    float --> double
+```
 
 ```cs
 int myInt = 9;
 double myDouble = myInt;
+```
 
+Anniq o'zlashtirish
+
+```mermaid
+graph LR
+	double --> float
+	float  --> long
+	long   --> int
+	int    --> char
+```
+
+```cs
 double myDouble = 9.78;
 int myInt = (int) myDouble;
 ```
+
+Metodlari:
 
 ```cs
 Convert.ToString(myInt);    // convert int to string
 Convert.ToDouble(myInt);    // convert int to double
 Convert.ToInt32(myDouble);  // convert double to int
 Convert.ToString(myBool);	// convert bool to string
+
+// yuqoridagilardn ossonroq metod
+int.Parse()
+double.Parse()
+String.Parse()
+float.Parse()
 ```
 
-mat   + - * / % ++ --
+Nomi          | Amali                              |
+--------------|------------------------------------|
+Matematik     |  + - * / % ++ --                   |
+O'zlashtirish | = += -= *= /= %= &= \|= ^= >>= <<= |
+Tenglik       | == != < > <= >=                    |
+Logik         | && \|\| !                          |
 
-equal = += -= *= /= %= &= |= ^= >>= <<=
+```cs
+using static System.Math;
 
-equal2 == != < > <= >=
+Max(x,y); 
+Min(x,y);
 
-Logic && || !
+Abs(x);
+Round(X); // yaxlitlash
+```
 
-Math.Max(x,y); // Min(x,y) Sqrt(x) Abs(x) Round(X) - yaxlitlash
+# OOP (obyekt class modullar)
 
+`prog2.cs` va `prog.cs` yaratamiz ...
 
+```cs
+class Car{
+  public string color = "red";
+}
+```
+```
+using System; // nomlar fazosiga murojat
+using static System.Console; // static classga murojat
+```
 
-[Klas va obyekt](oop.md)
+```cs
+class Program{
+  static void Main(){
+    Car myObj = new Car();
+    WriteLine(myObj.color);
+  }
+}
+```
+
+## Obyekt yaratish
+
+```cs
+class Car{
+  string model;
+  string color;
+  int year;
+
+  static void Main(){
+    Car Ford = new Car(); // 1-obyekt
+    Ford.model = "Mustang";
+    Ford.color = "red";
+    Ford.year = 1969;
+
+    Car Opel = new Car(); // 2-obyekt
+    Opel.model = "Astra";
+    Opel.color = "white";
+    Opel.year = 2005;
+
+    WriteLine(Ford.model);
+    WriteLine(Opel.model);
+  }
+}
+```
+
+## konstruktor
+
+```cs
+class Car{
+  public string model;  // maydon
+  
+  public Car(){ // konstruktor
+    model = "Mustang";
+  }
+
+  static void Main(){
+    Car Ford = new Car();	// obyekt yaratildi
+    WriteLine(Ford.model);	// qiymat chop etildi
+  }
+}
+```
+
+# CSharp klass, struktura, this, metid, maydon va obyekt kalit so'zlari
+
+```csharp
+class Person{
+    public string name;
+    public int    age;
+ 
+    public Person()            : this("Неизвестно"){}
+    public Person(string name) : this(name, 18){}
+    
+    public Person(string name, int age){
+        this.name = name;
+        this.age  = age;
+    }
+    
+    public void GetInfo(){
+        WriteLine($"Имя: {name}  Возраст: {age}");
+    }
+}
+```
+
+## obyekt yaratgan paytda maydonlarga qiymat berish
+
+```csharp
+Person tom = new Person { name = "Tom", age=31 };
+tom.GetInfo();          // Имя: Tom  Возраст: 31
+```
+
+## public, private, protected, internal va getset
+
+```cs
+class Person{
+  private string name; // field
+  
+  public string Name{
+    get { return name; }   // getter
+    set { name = value; }  // setter
+  }
+}
+```
+
+## vorislik
+
+```cs
+class Vehicle{ // class bobo classi yaratildi
+  public string brand = "Ford";
+  
+  public void honk(){
+    WriteLine("Tuut, tuut!");
+  }
+}
+
+class Car : Vehicle{ // class farzandi
+  public string modelName = "Mustang";  // Car field
+}
+
+class Program{
+  static void Main(){
+    Car myCar = new Car(); // obyekti
+	myCar.honk();
+    WriteLine(myCar.brand + " " + myCar.modelName);
+  }
+}
+```
+
+## virtual va override kalit so'zlari
+
+```cs
+class Animal{
+  public virtual void animalSound(){
+    WriteLine("The animal makes a sound");
+  }
+}
+
+class Pig : Animal{
+  public override void animalSound(){
+    WriteLine("The pig says: wee wee");
+  }
+}
+
+class Dog : Animal{
+  public override void animalSound(){
+    WriteLine("The dog says: bow wow");
+  }
+}
+
+class Program{
+  static void Main(string[] args){
+    Animal myAnimal = new Animal();  // Create a Animal object
+    Animal myPig    = new Pig();  // Create a Pig object
+    Animal myDog    = new Dog();  // Create a Dog object
+
+    myAnimal.animalSound();
+    myPig.animalSound();
+    myDog.animalSound();
+  }
+}
+
+// The animal makes a sound
+// The pig says: wee wee
+// The dog says: bow wow
+```
+
+```cs
+// Abstract class
+abstract class Animal{
+  // Abstract method (does not have a body)
+  public abstract void animalSound();
+  
+  // Regular method
+  public void sleep(){
+    WriteLine("Zzz");
+  }
+}
+
+// Derived class (inherit from Animal)
+class Pig : Animal{
+  public override void animalSound(){
+    // The body of animalSound() is provided here
+    Console.WriteLine("The pig says: wee wee");
+  }
+}
+
+class Program{
+  static void Main(){
+    Pig myPig = new Pig(); // Create a Pig object
+    
+    myPig.animalSound();  // Call the abstract method
+    myPig.sleep();  // Call the regular method
+  }
+}
+```
+
+## Interfeys
+
+```cs
+// Interface
+interface IAnimal{
+  void animalSound(); // interface method (does not have a body)
+}
+
+// Pig "implements" the IAnimal interface
+class Pig : IAnimal{
+  public void animalSound(){
+    // The body of animalSound() is provided here
+    WriteLine("The pig says: wee wee");
+  }
+}
+
+class Program{
+  static void Main(){
+    Pig myPig = new Pig();  // Create a Pig object
+    myPig.animalSound();
+  }
+}
+```
+
+## Enumiratsya (ajoyib narsa)
+
+```cs
+class Program{
+  enum Level{
+    Low,
+    Medium,
+    High
+  }
+
+  static void Main(string[] args){
+    Level myVar = Level.Medium;
+    WriteLine(myVar);
+  }
+}
+// Результат будет:
+// Medium
+```
 
 ## Matin metidlari
 

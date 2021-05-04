@@ -6,7 +6,7 @@ tags:
   - cheatsheet
   - cmath
   - math
-featuredimg: /assets/img/img_1.jpg
+featuredimg: /assets/img/cppwal.jpg
 ---
 
 # C++ dasturlash tili

@@ -23,6 +23,7 @@ module.exports = {
   plugins: [
   	'latex',
   	'img-lazy',
+	'vuepress-plugin-mermaidjs',
   	[
       'vuepress-plugin-mathjax',
       { target: 'svg', macros: {'*': '\\times',},},
@@ -59,7 +60,8 @@ module.exports = {
     
     ['container', {
       type: 'detal',
-      before: info => `<details class="custom-block detal">`,
+      before: info => `<details class="custom-block detal" align="left">
+    	<summary>To'liqroq</summary>`,
       after: '</details>',
     }],
   ],
