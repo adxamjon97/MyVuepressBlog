@@ -4,135 +4,15 @@
  * ref：https://v1.vuepress.vuejs.org/config/#index-styl
  */
 
-/* costom-block */
-.custom-block  
-  padding           0 .4rem 0 .4rem
-  border-left-width .5rem
-  border-left-style solid
-  margin            .5rem 0
-
-.blok
-  background-color #eee
-  border-color     black
-  
-.yashil
-  background-color #f3f5f7
-  border-color     #42b983
-  color 		   #42b983
-
-.sariq
-  background-color rgba(255,229,100,.4)
-  border-color 	   #e7c000
-  color 		   #6b5900
-  
-.qizil
-  background-color #ffe6e6
-  border-color     #c00
-  color            #4d0000
-
-.detal
-  background-color #eee
-  
-  display       block
-  position      relative
-  border-radius 2px
-  margin        .5em 0
-  padding       .5em
-  
-body
-  background #ededed
+@import 'block'
+@import 'mypost'
+@import 'print'
 
 /*
 * {
   box-sizing: border-box;
 }
 */
-/* My Block */
-#MyPost
-  background-color white
-  box-shadow:
-	0 0.46875rem 2.1875rem  rgba(90,97,105,.1), 
-	0 0.9375rem  1.40625rem rgba(90,97,105,.1), 
-	0 0.25rem    0.53125rem rgba(90,97,105,.12), 
-    0 0.125rem   0.1875rem  rgba(90,97,105,.1);
-  transition box-shadow 1s   
-  cursor pointer
-
-
-#MyPost:hover
-  box-shadow:
-    0 0.46875rem 2.1875rem  rgba(3, 168, 124,.5), 
-    0 0.9375rem  1.40625rem rgba(3, 168, 124,.3), 
-    0 0.25rem    0.53125rem rgba(3, 168, 124,.3), 
-    0 0.125rem   0.1875rem  rgba(3, 168, 124,.3);
-
-
-#MyPost:hover a
-  color $accentColor
-  //transition: color 1s
-
-#MyPostContent
-  background-color white
-  box-shadow:
-	0 0.46875rem 2.1875rem  rgba(90,97,105,.1), 
-	0 0.9375rem  1.40625rem rgba(90,97,105,.1), 
-	0 0.25rem    0.53125rem rgba(90,97,105,.12), 
-    0 0.125rem   0.1875rem  rgba(90,97,105,.1);
-  background-color white
-
-
-#MyPostContent table
-  border-spacing 0
-  border-collapse collapse
-  border 1px solid #c6cbd1
-  padding 6px 13px
-  margin 7px
-  
-#MyPostContent table tr
-  background-color $bgColor
-  
-#MyPostContent thead
-  display table-header-group
-  vertical-align middle
-  border-color inherit
-  
-#MyPostContent table thead tr th
-  text-align center
-	
-#MyPostContent tr:nth-child(2n),
-#MyPostContent table thead tr
-  background-color #ebf1f2
-
-#MyPostContent table th,
-#MyPostContent table td
-  padding 6px 13px
-  border 1px solid #c6cbd1
-
-/*
-tr { // user agent
-  display: table-row;
-  vertical-align: inherit;
-  border-color: inherit;
-}
-
-tr {
-  background-color: var(--color-bg-primary);
-  border-top: 1px solid var(--color-markdown-table-tr-border);
-}*/
-#Post-1 p,
-#Post-3
-  padding 0 3% 0 3%
-
-#Post-3 p
-  text-align justify
-  text-indent 5%
-
-#Post-1 h1, 
-#Post-3 h1,
-#Post-3 h2,
-#Post-3 h3
-  text-align center
-  padding 0 8% 0 8%
 
 
 

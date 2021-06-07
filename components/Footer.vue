@@ -1,9 +1,9 @@
 <template>
-	<footer class="themefooter">
+	<footer id="MyFooter" class="themefooter">
 		<div class="container">
 			<div class="row justify-content-between">
 				<NavLink link="/" class="navbar-brand">
-					<svg width=80 viewBox="0 0 330 220" version="1.1" id="svg_null">
+					<svg width="80" viewBox="0 0 330 220" version="1.1" id="svg_null">
 						<g id="root" stroke="none" 
 								stroke-width="1" fill="none" 
 								fill-rule="evenodd">
